@@ -22,14 +22,15 @@ cask "vibe-awake" do
   #   quit       stop the app, which would otherwise keep requesting sleep be blocked
   #   script     clear the flag, now that nothing is left to set it again
   #   delete     remove the helper's files
-  uninstall launchctl: "com.ychof.vibeawake.helper",
-            quit:      "com.ychof.vibeawake",
-            script:    {
+  uninstall launchctl:  "com.ychof.vibeawake.helper",
+            quit:       "com.ychof.vibeawake",
+            login_item: "Vibe Awake",
+            script:     {
               executable: "/usr/bin/pmset",
               args:       ["-a", "disablesleep", "0"],
               sudo:       true,
             },
-            delete:    [
+            delete:     [
               "/Library/Application Support/VibeAwake",
               "/Library/LaunchDaemons/com.ychof.vibeawake.helper.plist",
             ]
