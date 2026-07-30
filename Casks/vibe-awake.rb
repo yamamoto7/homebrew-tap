@@ -11,9 +11,24 @@ cask "vibe-awake" do
 
   app "Vibe Awake.app"
 
-  # The privileged helper lives outside the app bundle, so removing the app alone would
-  # leave a root LaunchDaemon behind. Homebrew asks for a password to delete these.
+  # The app blocks sleep through a privileged helper that sets `pmset disablesleep`, so
+  # removing the app alone is not enough. Deleting the helper while that flag is still set
+  # strands the machine: nothing is left that can turn it back off, and it stops sleeping
+  # on a closed lid for good.
+  #
+  # Homebrew runs these in a fixed order (launchctl -> quit -> script -> delete), which is
+  # exactly what is needed:
+  #   launchctl  unload the helper so it cannot re-apply the flag
+  #   quit       stop the app, which would otherwise keep requesting sleep be blocked
+  #   script     clear the flag, now that nothing is left to set it again
+  #   delete     remove the helper's files
   uninstall launchctl: "com.ychof.vibeawake.helper",
+            quit:      "com.ychof.vibeawake",
+            script:    {
+              executable: "/usr/bin/pmset",
+              args:       ["-a", "disablesleep", "0"],
+              sudo:       true,
+            },
             delete:    [
               "/Library/Application Support/VibeAwake",
               "/Library/LaunchDaemons/com.ychof.vibeawake.helper.plist",
