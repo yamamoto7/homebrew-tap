@@ -5,15 +5,13 @@
 ## インストール
 
 ```bash
-brew install --cask yamamoto7/tap/vibe-awake
-```
-
-タップを先に追加しておくこともできます。
-
-```bash
 brew tap yamamoto7/tap
+brew trust yamamoto7/tap
 brew install --cask vibe-awake
 ```
+
+Homebrew 6 ではサードパーティのタップを明示的に信頼しないと cask を読み込めません。
+`brew trust` を省くと「Refusing to load cask ... from untrusted tap」でインストールが止まります。
 
 ## 収録しているもの
 
