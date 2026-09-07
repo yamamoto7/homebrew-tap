@@ -1,6 +1,6 @@
 cask "vibe-awake" do
-  version "2.0.1"
-  sha256 "0125557d8a80e4c60573a4bd9823946d33b1f52d5e3ad32f582227fbd5ee0bc6"
+  version "2.1.0"
+  sha256 "5d94485d1192da86065acf8118b48a7c63e40afb109fa2e5342b950c124ba066"
 
   url "https://github.com/yamamoto7/vibe-awake/releases/download/v#{version}/VibeAwake-#{version}.dmg"
   name "Vibe Awake"
