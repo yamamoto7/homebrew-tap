@@ -1,25 +1,25 @@
 class Mobicat < Formula
-  desc "Android and iOS app logs in one terminal UI"
+  desc "One log viewer for Android and iOS: your app's logs only, crashes with stack traces, the same keys and filters on both"
   homepage "https://github.com/yamamoto7/mobicat"
-  version "0.1.0"
+  version "0.1.1"
   if OS.mac?
     if Hardware::CPU.arm?
-      url "https://github.com/yamamoto7/mobicat/releases/download/v0.1.0/mobicat-aarch64-apple-darwin.tar.xz"
-      sha256 "88b859d8b3575120ec62c32e90073c62edbb21d42a339581776c465591987fbb"
+      url "https://github.com/yamamoto7/mobicat/releases/download/v0.1.1/mobicat-aarch64-apple-darwin.tar.xz"
+      sha256 "d0d188fc3b415d81df94815aa224068227a47b1c55338548a4cbc9262e35e684"
     end
     if Hardware::CPU.intel?
-      url "https://github.com/yamamoto7/mobicat/releases/download/v0.1.0/mobicat-x86_64-apple-darwin.tar.xz"
-      sha256 "3305652b030ef8c6de4943a2e1a55392b39d9d3d605ab4ee58a38f063fbeb24d"
+      url "https://github.com/yamamoto7/mobicat/releases/download/v0.1.1/mobicat-x86_64-apple-darwin.tar.xz"
+      sha256 "e9d717a5f2583e16f3a3ff1f65e87c9d82255889053648f0b13f3b68949c1dab"
     end
   end
   if OS.linux?
     if Hardware::CPU.arm?
-      url "https://github.com/yamamoto7/mobicat/releases/download/v0.1.0/mobicat-aarch64-unknown-linux-gnu.tar.xz"
-      sha256 "a48f7f873918d78e52cb1f5bec53623613ce64e1d4651ea7818d9ba215943856"
+      url "https://github.com/yamamoto7/mobicat/releases/download/v0.1.1/mobicat-aarch64-unknown-linux-gnu.tar.xz"
+      sha256 "159022026102bb939847fe6d56c333cf789699a48e42576d236fb898330d3ea0"
     end
     if Hardware::CPU.intel?
-      url "https://github.com/yamamoto7/mobicat/releases/download/v0.1.0/mobicat-x86_64-unknown-linux-gnu.tar.xz"
-      sha256 "7cc492ddc5f183cf90646d7b33c216899e073486067c57246821c848a6d8349f"
+      url "https://github.com/yamamoto7/mobicat/releases/download/v0.1.1/mobicat-x86_64-unknown-linux-gnu.tar.xz"
+      sha256 "d051e6dd8356713938dc60a93506089bc04fb2146f68d27e28ea679bbccb4ecf"
     end
   end
   license "Apache-2.0"
