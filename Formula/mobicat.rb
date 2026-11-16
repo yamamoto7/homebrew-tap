@@ -1,25 +1,25 @@
 class Mobicat < Formula
   desc "One log viewer for Android and iOS: your app's logs only, crashes with stack traces, the same keys and filters on both"
   homepage "https://github.com/yamamoto7/mobicat"
-  version "0.2.0"
+  version "0.3.0"
   if OS.mac?
     if Hardware::CPU.arm?
-      url "https://github.com/yamamoto7/mobicat/releases/download/v0.2.0/mobicat-aarch64-apple-darwin.tar.xz"
-      sha256 "b0958424c896082338f3a974e77d30a3990c552cf453db280683989d3df0231e"
+      url "https://github.com/yamamoto7/mobicat/releases/download/v0.3.0/mobicat-aarch64-apple-darwin.tar.xz"
+      sha256 "e17617bcb90042425ba586b9c833589868639eca96da2fa5b17462e88e46ae9d"
     end
     if Hardware::CPU.intel?
-      url "https://github.com/yamamoto7/mobicat/releases/download/v0.2.0/mobicat-x86_64-apple-darwin.tar.xz"
-      sha256 "40989cf2c25ff9e3d950313a2a188d0725b87604003fc943fa786fa736f1ff91"
+      url "https://github.com/yamamoto7/mobicat/releases/download/v0.3.0/mobicat-x86_64-apple-darwin.tar.xz"
+      sha256 "b157d5324cb21ed509f2effcc90d11907f1e16cf9e13bee4c71f983f6f7bdf4b"
     end
   end
   if OS.linux?
     if Hardware::CPU.arm?
-      url "https://github.com/yamamoto7/mobicat/releases/download/v0.2.0/mobicat-aarch64-unknown-linux-gnu.tar.xz"
-      sha256 "e74047ece96fd84099200f914bbf92a8f03b68eea34e294fd67e03e7bcbef661"
+      url "https://github.com/yamamoto7/mobicat/releases/download/v0.3.0/mobicat-aarch64-unknown-linux-gnu.tar.xz"
+      sha256 "7d46c522d84114c6fa161a43d5472d99a1de90f4a92858c30b01545f3bab8b83"
     end
     if Hardware::CPU.intel?
-      url "https://github.com/yamamoto7/mobicat/releases/download/v0.2.0/mobicat-x86_64-unknown-linux-gnu.tar.xz"
-      sha256 "485d9c87c9078dae0072d675008329e25960569169589ff3ec30f19114170b31"
+      url "https://github.com/yamamoto7/mobicat/releases/download/v0.3.0/mobicat-x86_64-unknown-linux-gnu.tar.xz"
+      sha256 "e679a966ed91778230c757640bf2d84cf92cb8e76e44057fc04de2872d32a5db"
     end
   end
   license "Apache-2.0"
